@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FeatureFolderWebApiApplication.Vacation
 {
     [Route("api/vacation")]
-    //[Authorize(Policy = "IsManager")]
+    [Authorize(Policy = "IsManager")]
     [ApiController]
     public class ApprovalController : ControllerBase
     {
@@ -23,7 +24,7 @@ namespace FeatureFolderWebApiApplication.Vacation
         [HttpPut("{id}/reject")]
         public void Reject(int id)
         {
-            _vacationService.Approve(id);
+            _vacationService.Reject(id);
         }
     }
 }

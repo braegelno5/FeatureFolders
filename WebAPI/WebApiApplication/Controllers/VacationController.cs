@@ -64,7 +64,7 @@ namespace WebApiApplication.Controllers
         [HttpPut("{id}/reject")]
         public void Reject(int id)
         {
-            _vacationService.Approve(id);
+            _vacationService.Reject(id);
         }
     }
 }

@@ -53,18 +53,18 @@ namespace WebApiApplication.Controllers
             // Do something useful here
         }
 
-        [Authorize(Policy = "IsManager"]
+        [Authorize(Policy = "IsManager")]
         [HttpPut("{id}/approve")]
         public void Approve(int id)
         {
             _vacationService.Approve(id);
         }
 
-        [Authorize(Policy = "IsManager"]
+        [Authorize(Policy = "IsManager")]
         [HttpPut("{id}/reject")]
         public void Reject(int id)
         {
-            _vacationService.Approve(id);
+            _vacationService.Reject(id);
         }
     }
 }
